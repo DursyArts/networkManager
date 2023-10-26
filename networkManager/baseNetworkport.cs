@@ -17,7 +17,7 @@ namespace networkManager {
             return port;
         }
 
-        public string getPortname(int port) {
+        public string getPortname() {
             return name;
         }
 
@@ -60,5 +60,6 @@ namespace networkManager {
         public string getAttachedIP() {
             return attachedIP;
         }
+
     }
 }

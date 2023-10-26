@@ -39,6 +39,8 @@ namespace networkManager {
             labelSwitchPowerstate.Text = Convert.ToString(switchPowerstate);
 
             switches[index].getPort();
+
+            pgbUsedports.Maximum = switchPortcount;
         }
         
         public void label_createSwitch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
@@ -71,8 +73,31 @@ namespace networkManager {
         }
 
         private void addPortButton_Click(object sender, EventArgs e) {
-            switches[switchDropdown.SelectedIndex].createPort();
-            comboBoxPortSelect.Items.Add(switches[switchDropdown.SelectedIndex].getPort());
+
+            if(switchDropdown.SelectedIndex == -1) {
+                tooltiplabel.Text = "Select a switch first.";
+            } else {
+                if(switches[switchDropdown.SelectedIndex].getPortcount() < switches[switchDropdown.SelectedIndex].getUsedportcount()+1) {
+                    tooltiplabel.ForeColor = Color.Red;
+                    tooltiplabel.Text = "You cannot add anymore Ports.";
+                } else {
+                    switches[switchDropdown.SelectedIndex].createPort();
+                    labelUsedports.Text = switches[switchDropdown.SelectedIndex].getUsedportcount().ToString();
+                    pgbUsedports.Value = switches[switchDropdown.SelectedIndex].getUsedportcount();
+                    tooltiplabel.Text = "Added a Port to the switch: " + switches[switchDropdown.SelectedIndex].getHostname();
+                    //comboBoxPortSelect.Items.Add(switches[switchDropdown.SelectedIndex].getPortname());
+
+                    // get port list
+                    List<baseNetworkport> ports = switches[switchDropdown.SelectedIndex].getPortlist();
+
+                    comboBoxPortSelect.Items.Clear();
+
+                    for(int i = 0; i < ports.Count; i++) {
+                        comboBoxPortSelect.Items.Add(ports[i].getPortname());
+                    }
+                }
+            }
+
         }
 
         private void switchDropdown_SelectedIndexChanged(object sender, EventArgs e) {

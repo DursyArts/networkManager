@@ -7,10 +7,12 @@ namespace networkManager {
     class Switch : baseNetworkdevice {
         private List<baseNetworkport> ports = new List<baseNetworkport>();
         private int portcount;
+        private int usedports;
         private bool powerstate;
 
         public Switch() {
             powerstate = false;
+            usedports = 0;
         }
         public string getHostname() {
             return hostname;
@@ -45,8 +47,20 @@ namespace networkManager {
         }
 
         public void createPort() {
+            Console.WriteLine(usedports);
             ports.Add(new baseNetworkport { });
-            ports[0].setPort(ports.Count);
+            ports[usedports].setPort(usedports);
+            ports[usedports].setPortname("P"+ usedports);
+            Console.WriteLine(ports[usedports].getPortname());
+            usedports++;
+        }
+
+        public int getUsedportcount() {
+            return usedports;
+        }
+
+        public List<baseNetworkport> getPortlist() {
+            return ports;
         }
 
         public void setPortcount(int value) {
