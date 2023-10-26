@@ -13,6 +13,7 @@ namespace networkManager {
     public partial class form_Main : Form {
         public static form_Main instance;
         List<Switch> switches = new List<Switch>();
+        List<baseNetworkport> ports = new List<baseNetworkport>();
         public string[] newSwitchSettings = new string[5];
         public form_Main() {
             InitializeComponent();
@@ -41,6 +42,12 @@ namespace networkManager {
             switches[index].getPort();
 
             pgbUsedports.Maximum = switchPortcount;
+        }
+
+        void updatePortListVars(int Portnumber) {
+            
+
+            
         }
         
         public void label_createSwitch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
@@ -94,6 +101,7 @@ namespace networkManager {
 
                     for(int i = 0; i < ports.Count; i++) {
                         comboBoxPortSelect.Items.Add(ports[i].getPortname());
+
                     }
                 }
             }
@@ -111,6 +119,10 @@ namespace networkManager {
                 switches[switchDropdown.SelectedIndex].setPowerstate(true);
             }
             labelSwitchPowerstate.Text = Convert.ToString(switches[switchDropdown.SelectedIndex].getPowerstate()); //update current view
+        }
+
+        private void comboBoxPortSelect_SelectedIndexChanged(object sender, EventArgs e) {
+            updatePortListVars(comboBoxPortSelect.SelectedIndex);
         }
     }
 }

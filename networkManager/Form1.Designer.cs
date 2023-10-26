@@ -210,6 +210,7 @@
             this.comboBoxPortSelect.Name = "comboBoxPortSelect";
             this.comboBoxPortSelect.Size = new System.Drawing.Size(87, 21);
             this.comboBoxPortSelect.TabIndex = 20;
+            this.comboBoxPortSelect.SelectedIndexChanged += new System.EventHandler(this.comboBoxPortSelect_SelectedIndexChanged);
             // 
             // labelTogglePowerstate
             // 
