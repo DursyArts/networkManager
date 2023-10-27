@@ -28,9 +28,17 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.labelPortNumber = new System.Windows.Forms.Label();
+            this.labelPortMac = new System.Windows.Forms.Label();
+            this.labelAttachedMac = new System.Windows.Forms.Label();
+            this.labelAttachedIP = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labelAttachedDevice = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.addPortButton = new System.Windows.Forms.Button();
             this.comboBoxPortSelect = new System.Windows.Forms.ComboBox();
             this.labelTogglePowerstate = new System.Windows.Forms.LinkLabel();
@@ -66,21 +74,9 @@
             this.label_autosavestatus = new System.Windows.Forms.ToolStripLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tooltiplabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labelAttachedDevice = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.labelAttachedIP = new System.Windows.Forms.Label();
-            this.labelAttachedMac = new System.Windows.Forms.Label();
-            this.labelPortMac = new System.Windows.Forms.Label();
-            this.labelPortNumber = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -104,7 +100,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(459, 396);
+            this.tabPage1.Size = new System.Drawing.Size(459, 383);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Computers";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -136,9 +132,6 @@
             this.groupBox1.Controls.Add(this.labelAttachedDevice);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.addPortButton);
             this.groupBox1.Controls.Add(this.comboBoxPortSelect);
             this.groupBox1.Controls.Add(this.labelTogglePowerstate);
@@ -168,30 +161,104 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Display switch Properties";
             // 
-            // label16
+            // labelPortNumber
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(76, 150);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 13);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "port count";
+            this.labelPortNumber.AutoSize = true;
+            this.labelPortNumber.Location = new System.Drawing.Point(132, 313);
+            this.labelPortNumber.Name = "labelPortNumber";
+            this.labelPortNumber.Size = new System.Drawing.Size(10, 13);
+            this.labelPortNumber.TabIndex = 35;
+            this.labelPortNumber.Text = "-";
             // 
-            // button2
+            // labelPortMac
             // 
-            this.button2.Location = new System.Drawing.Point(190, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "apply";
-            this.button2.UseVisualStyleBackColor = true;
+            this.labelPortMac.AutoSize = true;
+            this.labelPortMac.Location = new System.Drawing.Point(132, 300);
+            this.labelPortMac.Name = "labelPortMac";
+            this.labelPortMac.Size = new System.Drawing.Size(10, 13);
+            this.labelPortMac.TabIndex = 34;
+            this.labelPortMac.Text = "-";
             // 
-            // numericUpDown1
+            // labelAttachedMac
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(137, 148);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(47, 20);
-            this.numericUpDown1.TabIndex = 22;
+            this.labelAttachedMac.AutoSize = true;
+            this.labelAttachedMac.Location = new System.Drawing.Point(132, 287);
+            this.labelAttachedMac.Name = "labelAttachedMac";
+            this.labelAttachedMac.Size = new System.Drawing.Size(10, 13);
+            this.labelAttachedMac.TabIndex = 33;
+            this.labelAttachedMac.Text = "-";
+            // 
+            // labelAttachedIP
+            // 
+            this.labelAttachedIP.AutoSize = true;
+            this.labelAttachedIP.Location = new System.Drawing.Point(132, 274);
+            this.labelAttachedIP.Name = "labelAttachedIP";
+            this.labelAttachedIP.Size = new System.Drawing.Size(10, 13);
+            this.labelAttachedIP.TabIndex = 32;
+            this.labelAttachedIP.Text = "-";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(64, 313);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(67, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Port number:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(76, 300);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Port MAC:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(52, 287);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 13);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Attached MAC:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(65, 274);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 13);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Attached IP:";
+            // 
+            // labelAttachedDevice
+            // 
+            this.labelAttachedDevice.AutoSize = true;
+            this.labelAttachedDevice.Location = new System.Drawing.Point(132, 261);
+            this.labelAttachedDevice.Name = "labelAttachedDevice";
+            this.labelAttachedDevice.Size = new System.Drawing.Size(10, 13);
+            this.labelAttachedDevice.TabIndex = 27;
+            this.labelAttachedDevice.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(41, 261);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Attached Device:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(70, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Select port:";
             // 
             // addPortButton
             // 
@@ -411,7 +478,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(459, 396);
+            this.tabPage3.Size = new System.Drawing.Size(459, 383);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Routers";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -453,13 +520,13 @@
             // onToolStripMenuItem
             // 
             this.onToolStripMenuItem.Name = "onToolStripMenuItem";
-            this.onToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
+            this.onToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.onToolStripMenuItem.Text = "on";
             // 
             // offToolStripMenuItem
             // 
             this.offToolStripMenuItem.Name = "offToolStripMenuItem";
-            this.offToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
+            this.offToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.offToolStripMenuItem.Text = "off";
             // 
             // toolStripMenuItem2
@@ -507,105 +574,6 @@
             this.tooltiplabel.Size = new System.Drawing.Size(39, 17);
             this.tooltiplabel.Text = "Status";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(70, 232);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 13);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Select port:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 261);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 13);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Attached Device:";
-            // 
-            // labelAttachedDevice
-            // 
-            this.labelAttachedDevice.AutoSize = true;
-            this.labelAttachedDevice.Location = new System.Drawing.Point(132, 261);
-            this.labelAttachedDevice.Name = "labelAttachedDevice";
-            this.labelAttachedDevice.Size = new System.Drawing.Size(10, 13);
-            this.labelAttachedDevice.TabIndex = 27;
-            this.labelAttachedDevice.Text = "-";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(65, 274);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Attached IP:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(52, 287);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(79, 13);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "Attached MAC:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(76, 300);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 13);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Port MAC:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(64, 313);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 13);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "Port number:";
-            // 
-            // labelAttachedIP
-            // 
-            this.labelAttachedIP.AutoSize = true;
-            this.labelAttachedIP.Location = new System.Drawing.Point(132, 274);
-            this.labelAttachedIP.Name = "labelAttachedIP";
-            this.labelAttachedIP.Size = new System.Drawing.Size(10, 13);
-            this.labelAttachedIP.TabIndex = 32;
-            this.labelAttachedIP.Text = "-";
-            // 
-            // labelAttachedMac
-            // 
-            this.labelAttachedMac.AutoSize = true;
-            this.labelAttachedMac.Location = new System.Drawing.Point(132, 287);
-            this.labelAttachedMac.Name = "labelAttachedMac";
-            this.labelAttachedMac.Size = new System.Drawing.Size(10, 13);
-            this.labelAttachedMac.TabIndex = 33;
-            this.labelAttachedMac.Text = "-";
-            // 
-            // labelPortMac
-            // 
-            this.labelPortMac.AutoSize = true;
-            this.labelPortMac.Location = new System.Drawing.Point(132, 300);
-            this.labelPortMac.Name = "labelPortMac";
-            this.labelPortMac.Size = new System.Drawing.Size(10, 13);
-            this.labelPortMac.TabIndex = 34;
-            this.labelPortMac.Text = "-";
-            // 
-            // labelPortNumber
-            // 
-            this.labelPortNumber.AutoSize = true;
-            this.labelPortNumber.Location = new System.Drawing.Point(132, 313);
-            this.labelPortNumber.Name = "labelPortNumber";
-            this.labelPortNumber.Size = new System.Drawing.Size(10, 13);
-            this.labelPortNumber.TabIndex = 35;
-            this.labelPortNumber.Text = "-";
-            // 
             // form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -615,6 +583,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -624,7 +593,6 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -671,9 +639,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel label_autosavestatus;
         private System.Windows.Forms.LinkLabel labelTogglePowerstate;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button addPortButton;
         private System.Windows.Forms.ComboBox comboBoxPortSelect;
         private System.Windows.Forms.StatusStrip statusStrip1;

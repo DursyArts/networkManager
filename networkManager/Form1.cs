@@ -44,10 +44,34 @@ namespace networkManager {
             pgbUsedports.Maximum = switchPortcount;
         }
 
-        void updatePortListVars(int Portnumber) {
-            
+        string generateMAC() {
+            string macAddress = "";
 
-            
+            Random rnd = new Random();
+            int randomMACBlock;
+            string[] macBlock = new string[6];
+
+            //6 bytes
+            for(int i = 0; i < 6; i++) {
+                randomMACBlock = rnd.Next(0, 255);
+                macBlock[i] = randomMACBlock.ToString("X2"); // convert int to 2 Hexadecimal characters
+                Console.WriteLine("Generated random number: " + randomMACBlock);
+                Console.WriteLine("Parsed into byte as: " + macBlock[i]);
+            }
+
+            //build mac
+            macAddress = macBlock[0] + ":" + macBlock[1] + ":" + macBlock[2] + ":" + macBlock[3] + ":" + macBlock[4] + ":" + macBlock[5];
+
+            return macAddress;
+        }
+
+        void updatePortListVars(int Portnumber) {
+            string switchportnumber = ports[Portnumber].getPort().ToString();
+            string switchportmac = ports[Portnumber].getMacAddress();
+
+            labelPortNumber.Text = switchportnumber;
+            labelPortMac.Text = switchportmac;
+            Console.WriteLine(ports[Portnumber].getPortname());
         }
         
         public void label_createSwitch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
@@ -91,12 +115,17 @@ namespace networkManager {
                     switches[switchDropdown.SelectedIndex].createPort();
                     labelUsedports.Text = switches[switchDropdown.SelectedIndex].getUsedportcount().ToString();
                     pgbUsedports.Value = switches[switchDropdown.SelectedIndex].getUsedportcount();
+
+
+
                     tooltiplabel.Text = "Added a Port to the switch: " + switches[switchDropdown.SelectedIndex].getHostname();
                     //comboBoxPortSelect.Items.Add(switches[switchDropdown.SelectedIndex].getPortname());
 
                     // get port list
-                    List<baseNetworkport> ports = switches[switchDropdown.SelectedIndex].getPortlist();
-
+                    ports = switches[switchDropdown.SelectedIndex].getPortlist();
+                    Console.WriteLine(switches[switchDropdown.SelectedIndex].getUsedportcount());
+                    ports[switches[switchDropdown.SelectedIndex].getUsedportcount()-1].setMacAddress(generateMAC());
+                    Console.WriteLine(ports);
                     comboBoxPortSelect.Items.Clear();
 
                     for(int i = 0; i < ports.Count; i++) {

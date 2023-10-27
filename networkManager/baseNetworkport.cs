@@ -21,7 +21,7 @@ namespace networkManager {
             return name;
         }
 
-        public string getMacAddress(int port) {
+        public string getMacAddress() {
             return mac;
         }
 
